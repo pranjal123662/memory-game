@@ -1,4 +1,9 @@
-const gameContainer = document.getElementsById("game");
+const gameContainer = document.getElementById("game");
+const Startbutton= document.getElementById("button");
+// const gamecontainer1=gameContainer.querySelector("div");
+const restartButton=document.getElementById("restart-button");
+const addScore=document.getElementById("add-score");
+const score=document.getElementById("score");
 
 const COLORS = [
   "red",
@@ -58,10 +63,70 @@ function createDivsForColors(colorArray) {
 }
 
 // TODO: Implement this function!
+function gameFunction(){
+  // console.log(gamecontainer1);
+  // console.log(gameContainer);
+  // console.log(gameContainer.style);
+  if(gameContainer.style.display===""){
+    gameContainer.style.display="inline-block";
+    Startbutton.style.display="None";
+    restartButton.style.display="block";
+    score.style.display="block";
+  }
+}
+Startbutton.addEventListener('click',gameFunction);
+function restart(){
+  // console.log(clicked);
+  if(clicked===COLORS.length){
+    location.reload();
+  }
+}
+restartButton.addEventListener('click',restart);
+
+let arr=[];
+let count=0;
+let clicked=0;
+let move=0;
 function handleCardClick(event) {
   // you can use event.target to see which element was clicked
-  console.log("you clicked",event.target);
-}
+  if(count<2){
+    let color=event.target.classList;
+    event.target.style.backgroundColor=color;
+    arr.push(event.target);
+    
+    move+=1;
+    count+=1;
+    addScore.innerHTML=move;
+    // console.log(arr);
+  }
+  
+  
+  if(count==2){
+    // console.log(arr[0].className);
+    // if(arr[0].className!==arr[1].className){
+      if(arr[0].className!=arr[1].className){
+        setTimeout(()=>{
+            arr[0].style.backgroundColor="darkblue";
+            arr[1].style.backgroundColor="darkblue";
+            count=0;
+            arr=[];
+        },1*1000);
+      }
+      else{
+        // console.log(arr);
+        arr[0].removeEventListener("click",handleCardClick);
+        arr[1].removeEventListener("click",handleCardClick);
+        clicked+=2;
+        count=0;
+        arr=[];  
+      }
+     
+      // console.log(clicked);
+    }
+  }
+
+
+// }
 
 // when the DOM loads
 createDivsForColors(shuffledColors);

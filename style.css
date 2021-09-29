@@ -1,7 +1,54 @@
- #game div {
-  border: 1px solid black;
-  width: 15%;
-  height: 200px;
+ body{
+  font-family: 'Montserrat', sans-serif;
+  background-color:red;
+ }
+ #game{
+   display:none;
+ }
+ #game div{
+  border: 3px solid black;
+  /* width: 15%; */
+  height: 200px; 
+  min-width: 200px;
   margin: 10px;
   display: inline-block;
+  border-radius: 13px;
+  background-color:darkblue;
 } 
+#textsizing{
+  text-align:center;
+  color:lightblue;
+}
+#div1{
+  display: flex;
+  justify-content: center;
+  align-content:center;
+}
+#button{
+  width:10rem;
+  height:3rem;
+  text-align:center;
+  border-radius:13px;
+  border:none;
+  background-color:rgb(77, 154, 255);
+}
+#div2{
+  display:flex;
+  justify-content: center;
+  align-content: center;
+}
+#restart-button{
+  display:none;
+  width:10rem;
+  height:3rem;
+  text-align:center;
+  border-radius:13px;
+  border:none;
+  background-color:rgb(77, 154, 255);
+}
+#score{
+  text-align:center;
+  font-size:1.8rem;
+  display:none;
+  color:lightblue;
+}

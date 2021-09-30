@@ -162,13 +162,13 @@ function handleCardClick(event){
           if(clicked===8){
              if(localStorage.getItem("Score")===undefined){
               localStorage.setItem({"Score":move});
-              winner.innerHTML="Best score: "+move;
+              winner.innerText="Best score: "+move;
              }
              else if(move<=localStorage.getItem("Score")){
-                 winner.innerHTML="Best Score: "+move;
+                 winner.innerText="Best Score: "+move;
                  localStorage.setItem({"Score":move})
              }else{
-                winner.innerHTML="Best Score: "+localStorage.getItem("Score");
+                winner.innerText="Best Score: "+localStorage.getItem("Score");
              }
           }
       }

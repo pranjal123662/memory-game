@@ -91,7 +91,7 @@ function gameFunction(){
   if(gameContainer.style.display===""){
     gameContainer.style.display="flex";
     Startbutton.style.display="None";
-    restartButton.style.display="block";
+    // restartButton.style.display="block";
     score.style.display="block";
     drag.style.display="none";
   }
@@ -161,6 +161,7 @@ function handleCardClick(event){
       }
       if(select.value==="1"){
           if(clicked===8){
+            restartButton.style.display="block"
             gameOver.innerText="Game Over";
             if(!localStorage.getItem("Score")){
               
@@ -177,8 +178,10 @@ function handleCardClick(event){
           }
       }
       if(select.value==="2"){
-        if(clicked===8){
-           if(localStorage.getItem("Score")===undefined){
+        if(clicked===12){
+          restartButton.style.display="block"
+          gameOver.innerText="Game Over";
+           if(!localStorage.getItem("Score")){
             localStorage.setItem("Score",move);
             winner.innerHTML="Best score: "+move;
            }
@@ -191,8 +194,10 @@ function handleCardClick(event){
         }
     }
     if(select.value==="3"){
-      if(clicked===8){
-         if(localStorage.getItem("Score")===undefined){
+      if(clicked===20){
+        restartButton.style.display="block";
+        gameOver.innerText="Game Over";
+         if(!localStorage.getItem("Score")){
           localStorage.setItem({"Score":move});
           winner.innerHTML="Best score: "+move;
          }

@@ -128,6 +128,7 @@ function handleCardClick(event){
     if(count<2){
       let image=event.target.classList;
       event.target.style=`background-image : url(${image});`;
+      event.target.classList.add("clicked");
       arr.push(event.target);
       move+=1;
       count+=1;
@@ -144,6 +145,8 @@ function handleCardClick(event){
              arr[1].style="background-image:none";
               arr[0].style.backgroundColor="khaki"
               arr[1].style.backgroundColor="khaki"
+              arr[0].classList.remove("clicked");
+              arr[1].classList.remove("clicked");
               count=0;
               arr=[];
           },1*1000);

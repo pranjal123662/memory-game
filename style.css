@@ -11,6 +11,7 @@
 }
  #game{
    display:none;
+   margin-left:7.5rem;
  }
  #game div{
   border: 3px solid black;
@@ -28,6 +29,7 @@
 #textsizing{
   text-align:center;
   color:black;
+  font-weight:900;
 }
 #div1{
   display: flex;
@@ -63,6 +65,7 @@
   font-size:1.8rem;
   display:none;
   color:black;
+  font-weight:600;
 }
 #drag{
   display:flex;
@@ -81,10 +84,15 @@ label{
   border-radius:13px;
   background-color: gold;
 }
+#winner{
+  font-size:1.8rem;
+  font-weight:600;
+}
 @media screen and (max-width:500px){
   #game div{
     min-width:100px;
     height:80px;
+    background-size:cover;
 
   }
 }

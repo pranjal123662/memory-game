@@ -6,7 +6,31 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="flex-container">
     <h1 id="textsizing">Memory Game!</h1>
+    <!-- <div id="toggle">
+      <h4 class="textfortoggle">Annually</h4>
+      <div id="formatted-toggle">
+        <label class="switch">
+          <input type="checkbox" id="toggle-container" onClick="change()" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <h4 class="textfortoggle">Monthly</h4>
+    </div> -->
+    <div id="drag">
+      <label for="cars">Choose a level:</label>
+    
+      <select name="Level" id="cars">
+        
+        <option value="1">Easy</option>
+        <option value="2">Medium</option>
+        <option value="3">Difficulty</option>
+        
+        
+      </select>
+    </div>
+   
     <div id="div1">
       <button id="button">Start Game</button>
     </div>
@@ -16,7 +40,7 @@
     <div id="div2">
       <button id="restart-button">Restart</button>
     </div>
-    
+   </div> 
     <script src="script.js"></script>
   </body>
 </html>

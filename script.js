@@ -158,21 +158,50 @@ function handleCardClick(event){
         // console.log(clicked);
       }
       if(select.value==="1"){
-          if(clicked==8){
-             if(!localStorage.getItem("Score")){
-              localStorage.setItem("Score",move);
+          if(clicked===8){
+             if(localStorage.getItem("Score")===undefined){
+              localStorage.setItem({"Score":move});
               winner.innerHTML="Best score: "+move;
              }
              else if(move<=localStorage.getItem("Score")){
-               winner.innerHTML="Best Score: "+move;
-               localStorage.setItem("Score",move);
+                 winner.innerHTML="Best Score: "+move;
+                 localStorage.setItem({"Score":move})
              }else{
-              winner.innerHTML="Best Score: "+move;
+                winner.innerHTML="Best Score: "+localStorage.getItem("Score");
              }
           }
       }
+      if(select.value==="2"){
+        if(clicked===8){
+           if(localStorage.getItem("Score")===undefined){
+            localStorage.setItem({"Score":move});
+            winner.innerHTML="Best score: "+move;
+           }
+           else if(move<=localStorage.getItem("Score")){
+               winner.innerHTML="Best Score: "+move;
+               localStorage.setItem({"Score":move})
+           }else{
+              winner.innerHTML="Best Score: "+localStorage.getItem("Score");
+           }
+        }
+    }
+    if(select.value==="3"){
+      if(clicked===8){
+         if(localStorage.getItem("Score")===undefined){
+          localStorage.setItem({"Score":move});
+          winner.innerHTML="Best score: "+move;
+         }
+         else if(move<=localStorage.getItem("Score")){
+             winner.innerHTML="Best Score: "+move;
+             localStorage.setItem({"Score":move})
+         }else{
+            winner.innerHTML="Best Score: "+localStorage.getItem("Score");
+         }
+      }
+  }
+      
 }
-console.log(clicked);
+
 
 // when the DOM loads
 // if(select.value==="1"){

@@ -89,7 +89,7 @@ function gameFunction(){
     createDivsForColors(shuffledColors);
   }
   if(gameContainer.style.display===""){
-    gameContainer.style.display="block";
+    gameContainer.style.display="flex";
     Startbutton.style.display="None";
     restartButton.style.display="block";
     score.style.display="block";

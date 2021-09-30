@@ -6,8 +6,10 @@ const addScore=document.getElementById("add-score");
 const score=document.getElementById("score");
 const drag=document.getElementById("drag");
 const select=document.getElementById("cars");
-localStorage.setItem("move","2");
-console.log(localStorage);
+const gameOver=document.getElementById("game-over");
+const bestScore=document.getElementById("add-best-score");
+const winner=document.getElementById("winner");
+
 // const COLORS=[
 //   "gifs/1.gif",
 //   "gifs/2.gif",
@@ -120,6 +122,8 @@ let count=0;
 let clicked=0;
 let move=0;
 function handleCardClick(event){
+  // winner.innerHTML="sad";
+
     if(count<2){
       let image=event.target.classList;
       event.target.style=`background-image : url(${image});`;
@@ -128,6 +132,7 @@ function handleCardClick(event){
       count+=1;
       addScore.innerHTML=move;
     }
+    
     
     if(count==2){
       // console.log(arr[0].className);
@@ -152,51 +157,52 @@ function handleCardClick(event){
        
         // console.log(clicked);
       }
+      if(select.value==="1"){
+          if(clicked==8){
+             if(!localStorage.getItem("Score")){
+              localStorage.setItem("Score",move);
+              winner.innerHTML="Best score: "+move;
+             }
+             else if(move<=localStorage.getItem("Score")){
+               winner.innerHTML="Best Score: "+move;
+               localStorage.setItem("Score",move);
+             }else{
+              winner.innerHTML="Best Score: "+move;
+             }
+          }
+      }
 }
-// let arr=[];
-// let count=0;
-// let clicked=0;
-// let move=0;
-// function handleCardClick(event) {
-//   // you can use event.target to see which element was clicked
-//   if(count<2){
-//     let color=event.target.classList;
-//     event.target.style.backgroundColor=color;
-//     arr.push(event.target);
-    
-//     move+=1;
-//     count+=1;
-//     addScore.innerHTML=move;
-//     // console.log(arr);
-//   }
-  
-  
-//   if(count==2){
-//     // console.log(arr[0].className);
-//     // if(arr[0].className!==arr[1].className){
-//       if(arr[0].className!=arr[1].className){
-//         setTimeout(()=>{
-//             arr[0].style.backgroundColor="khaki";
-//             arr[1].style.backgroundColor="khaki";
-//             count=0;
-//             arr=[];
-//         },1*1000);
-//       }
-//       else{
-//         // console.log(arr);
-//         arr[0].removeEventListener("click",handleCardClick);
-//         arr[1].removeEventListener("click",handleCardClick);
-//         clicked+=2;
-//         count=0;
-//         arr=[];  
-//       }
-     
-//       // console.log(clicked);
-//     }
-//   }
-
-
-// }
+console.log(clicked);
 
 // when the DOM loads
+// if(select.value==="1"){
+//   console.log(1);
+//     if(clicked==6){
+//        if(!localStorage.getItem("Score")){
+//         localStorage.setItem("Score",move);
+//         winner.innerHTML("Winner"+move+"<br/> Best score "+move);
+//         console.log("finished");
+//        }
+//        else if(moves<=localStorage.getItem("Score")){
+//          winner.innerHTML("Winner"+move+"<br/> Best Score:"+move);
+//          localStorage.setItem("Best Score",move);
+//         console.log("finished");
+
+//        }else{
+//         winner.innerHTML("Winner"+move+"<br/> Best Score:"+move);
+//         console.log("finished");
+
+//        }
+//     }
+// }
+// if(select.value==="2"){
+//   if(clicked===12){
+
+//   }
+// }
+// if(select.value==="3"){
+//   if(clicked===20){
+
+//   }
+// }
 

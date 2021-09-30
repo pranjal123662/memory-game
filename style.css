@@ -81,4 +81,9 @@ label{
   border-radius:13px;
   background-color: gold;
 }
+@media screen and (max-width:500px){
+  #game div{
+    min-width:100px;
+  }
+}
 

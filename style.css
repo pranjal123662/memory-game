@@ -21,7 +21,7 @@
   display: inline-block;
   border-radius: 13px;
   background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl7toldeJ4TZWYyUoputLqqipFRA2SD0WuCg&usqp=CAU");
-  margin-left:5rem;
+
   
 } 
 
@@ -84,6 +84,8 @@ label{
 @media screen and (max-width:500px){
   #game div{
     min-width:100px;
+    height:80px;
+
   }
 }
 

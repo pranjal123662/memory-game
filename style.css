@@ -87,7 +87,23 @@ label{
 #winner{
   font-size:1.8rem;
   font-weight:600;
+  text-align:center;
 }
+#game-over{
+  font-size:1.8rem;
+  font-weight:600;
+  text-align:center;
+  transform: scale(3);
+  transition: 300ms ease-out;
+}
+/* #game-over{
+  width:200px;
+  height:150px;
+  display:none;
+  background-color: lightcoral;
+  justify-content: center;
+  z-index:1;
+} */
 @media only screen and (max-width:500px){
   #game div{
     min-width:100px;

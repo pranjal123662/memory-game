@@ -6,9 +6,10 @@ const addScore=document.getElementById("add-score");
 const score=document.getElementById("score");
 const drag=document.getElementById("drag");
 const select=document.getElementById("cars");
-const gameOver=document.getElementById("game-over");
+// const gameOver=document.getElementById("game-over");
 const bestScore=document.getElementById("add-best-score");
 const winner=document.getElementById("winner");
+const gameOver=document.getElementById("game-over");
 
 // const COLORS=[
 //   "gifs/1.gif",
@@ -160,9 +161,9 @@ function handleCardClick(event){
       }
       if(select.value==="1"){
           if(clicked===8){
-            console.log(move);
+            gameOver.innerText="Game Over";
             if(!localStorage.getItem("Score")){
-              console.log(1);
+              
               localStorage.setItem("Score",move);
               winner.innerText="Best score: "+move;
             }

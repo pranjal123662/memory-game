@@ -67,7 +67,8 @@ body {
 }
 #drag {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin-top: 3rem;
   margin-bottom: 2rem;
   color: black;
@@ -109,12 +110,13 @@ label {
     align-content: center;
     flex-wrap: wrap;
     margin: 0;
+    
   }
   #game div {
     min-width: 0;
     width: 15vw;
     height: 20vw;
     background-size: cover;
-    margin: 0px 5px;
+    margin: 5px 5px;
   }
 }

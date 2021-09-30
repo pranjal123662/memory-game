@@ -6,7 +6,8 @@ const addScore=document.getElementById("add-score");
 const score=document.getElementById("score");
 const drag=document.getElementById("drag");
 const select=document.getElementById("cars");
-console.log(select.value);
+localStorage.setItem("move","2");
+console.log(localStorage);
 // const COLORS=[
 //   "gifs/1.gif",
 //   "gifs/2.gif",
@@ -127,6 +128,7 @@ function handleCardClick(event){
       count+=1;
       addScore.innerHTML=move;
     }
+    
     if(count==2){
       // console.log(arr[0].className);
       // if(arr[0].className!==arr[1].className){

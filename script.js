@@ -124,7 +124,9 @@ let clicked=0;
 let move=0;
 function handleCardClick(event){
   // winner.innerHTML="sad";
+   if(event.target.classList[1]!=="clicked"){
 
+   
     if(count<2){
       let image=event.target.classList;
       event.target.style=`background-image : url(${image});`;
@@ -139,7 +141,7 @@ function handleCardClick(event){
     if(count==2){
       // console.log(arr[0].className);
       // if(arr[0].className!==arr[1].className){
-        if(arr[0].className!=arr[1].className){
+        if(arr[0].classList[0]!=arr[1].classList[0]){
           setTimeout(()=>{
              arr[0].style="background-image:none";
              arr[1].style="background-image:none";
@@ -213,6 +215,7 @@ function handleCardClick(event){
       }
   }
       
+}
 }
 
 

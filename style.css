@@ -1,98 +1,96 @@
- body{
-  font-family: 'Montserrat', sans-serif;
-  background-color:gold;
- }
-#flex-container{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: gold;
+}
+#flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   align-content: center;
 }
- #game{
-   display:none;
-    margin: 2rem;
- }
- #game div{
+#game {
+  display: none;
+  margin: 2rem;
+}
+#game div {
   border: 3px solid black;
   /* width: 15%; */
-  height: 200px; 
+  height: 200px;
   min-width: 180px;
   margin: 10px;
   display: inline-block;
   border-radius: 13px;
-  background-color:khaki;
-
-  
-} 
-
-#textsizing{
-  text-align:center;
-  color:black;
-  font-weight:900;
+  background-color: khaki;
 }
-#div1{
+
+#textsizing {
+  text-align: center;
+  color: black;
+  font-weight: 900;
+}
+#div1 {
   display: flex;
-  justify-content: center;
-  align-content:center;
-}
-#button{
-  width:10rem;
-  height:3rem;
-  text-align:center;
-  border-radius:13px;
-  border:none;
-  background-color:orange;
-  margin-top:3rem;
-}
-#div2{
-  display:flex;
   justify-content: center;
   align-content: center;
 }
-#restart-button{
-  display:none;
-  width:10rem;
-  height:3rem;
-  text-align:center;
-  border-radius:13px;
-  border:none;
-  background-color:orange;
-  margin-top:2rem;
+#button {
+  width: 10rem;
+  height: 3rem;
+  text-align: center;
+  border-radius: 13px;
+  border: none;
+  background-color: orange;
+  margin-top: 3rem;
 }
-#score{
-  text-align:center;
-  font-size:1.8rem;
-  display:none;
-  color:black;
-  font-weight:600;
+#div2 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
-#drag{
-  display:flex;
-  justify-content:center;
-  margin-top:3rem;
-  margin-bottom:2rem;
-  color:black;
-  transition:2ms;
+#restart-button {
+  display: none;
+  width: 10rem;
+  height: 3rem;
+  text-align: center;
+  border-radius: 13px;
+  border: none;
+  background-color: orange;
+  margin-top: 2rem;
 }
-label{
-  font-size:1.5rem;
+#score {
+  text-align: center;
+  font-size: 1.8rem;
+  display: none;
+  color: black;
+  font-weight: 600;
 }
-#cars{
-  width:10rem;
-  border:3px solid black;
-  border-radius:13px;
+#drag {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  color: black;
+  transition: 2ms;
+}
+label {
+  font-size: 1.5rem;
+}
+#cars {
+  width: 10rem;
+  border: 3px solid black;
+  border-radius: 13px;
   background-color: gold;
 }
-#winner{
-  font-size:1.8rem;
-  font-weight:600;
-  text-align:center;
+#winner {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
 }
-#game-over{
-  font-size:1.8rem;
-  font-weight:600;
-  text-align:center;
+#game-over {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
   transform: scale(1);
   transition: 300ms ease-out;
 }
@@ -104,12 +102,17 @@ label{
   justify-content: center;
   z-index:1;
 } */
-@media only screen and (max-width:500px){
-  #game div{
-    min-width:100px;
-    height:80px;
-    background-size:cover;
-
+@media only screen and (max-width: 500px) {
+  #game {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+  #game div {
+    min-width: 0;
+    width: 15vw;
+    height: 20vw;
+    background-size: cover;
+    margin: 0px 5px;
   }
 }
-

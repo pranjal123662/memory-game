@@ -139,9 +139,10 @@ function handleCardClick(event){
       // if(arr[0].className!==arr[1].className){
         if(arr[0].className!=arr[1].className){
           setTimeout(()=>{
-              let image1="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl7toldeJ4TZWYyUoputLqqipFRA2SD0WuCg&usqp=CAU"
-              arr[0].style=`background-image:url(${image1});`
-              arr[1].style=`background-image:url(${image1});`
+             arr[0].style="background-image:none";
+             arr[1].style="background-image:none";
+              arr[0].style.backgroundColor="khaki"
+              arr[1].style.backgroundColor="khaki"
               count=0;
               arr=[];
           },1*1000);

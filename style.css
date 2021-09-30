@@ -1,7 +1,58 @@
  body{
   font-family: 'Montserrat', sans-serif;
-  background-color:red;
+  background-color:gold;
  }
+ .toggle{
+   display:flex;
+   margin-left:3rem;;
+ }
+ .switch{
+  position:relative;
+  display:inline-block;
+  top:2px;
+  width:100px;
+  height:42px;
+  margin:0 15px;
+  margin-top:30px;
+}
+
+.slider{
+  position:absolute;
+  cursor:pointer;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:hsl(236, 72%, 79%);
+  transition:.4s;
+  border-radius: 34px;
+}
+
+.switch input{
+  display:none;
+}
+
+.slider:before{
+  position:absolute;
+  content:"";
+  height:35px;
+  width:35px;
+  left:5px;
+  bottom:5px;
+  background-color: white;
+  transition:0.4s;
+  top:2.2px;
+  border-radius: 50%;
+}
+
+input:checked + .slider:before{
+  transform:translateX(50px);
+}
+#flex-container{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
  #game{
    display:none;
  }
@@ -9,15 +60,18 @@
   border: 3px solid black;
   /* width: 15%; */
   height: 200px; 
-  min-width: 200px;
+  min-width: 180px;
   margin: 10px;
   display: inline-block;
   border-radius: 13px;
-  background-color:darkblue;
+  background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl7toldeJ4TZWYyUoputLqqipFRA2SD0WuCg&usqp=CAU");
+  margin-left:2.9rem;
+  
 } 
+
 #textsizing{
   text-align:center;
-  color:lightblue;
+  color:black;
 }
 #div1{
   display: flex;
@@ -30,7 +84,8 @@
   text-align:center;
   border-radius:13px;
   border:none;
-  background-color:rgb(77, 154, 255);
+  background-color:orange;
+  margin-top:3rem;
 }
 #div2{
   display:flex;
@@ -44,11 +99,30 @@
   text-align:center;
   border-radius:13px;
   border:none;
-  background-color:rgb(77, 154, 255);
+  background-color:orange;
+  margin-top:2rem;
 }
 #score{
   text-align:center;
   font-size:1.8rem;
   display:none;
-  color:lightblue;
+  color:black;
 }
+#drag{
+  display:flex;
+  justify-content:center;
+  margin-top:3rem;
+  margin-bottom:2rem;
+  color:black;
+  transition:2ms;
+}
+label{
+  font-size:1.5rem;
+}
+#cars{
+  width:10rem;
+  border:3px solid black;
+  border-radius:13px;
+  background-color: gold;
+}
+

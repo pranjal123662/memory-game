@@ -160,13 +160,16 @@ function handleCardClick(event){
       }
       if(select.value==="1"){
           if(clicked===8){
-             if(localStorage.getItem("Score")===undefined){
-              localStorage.setItem({"Score":move});
+            console.log(move);
+            if(!localStorage.getItem("Score")){
+              console.log(1);
+              localStorage.setItem("Score",move);
               winner.innerText="Best score: "+move;
-             }
-             else if(move<=localStorage.getItem("Score")){
+            }
+              
+             if(move<=localStorage.getItem("Score")){
                  winner.innerText="Best Score: "+move;
-                 localStorage.setItem({"Score":move})
+                 localStorage.setItem("Score",move)
              }else{
                 winner.innerText="Best Score: "+localStorage.getItem("Score");
              }

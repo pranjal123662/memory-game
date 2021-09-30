@@ -175,12 +175,12 @@ function handleCardClick(event){
       if(select.value==="2"){
         if(clicked===8){
            if(localStorage.getItem("Score")===undefined){
-            localStorage.setItem({"Score":move});
+            localStorage.setItem("Score",move);
             winner.innerHTML="Best score: "+move;
            }
            else if(move<=localStorage.getItem("Score")){
                winner.innerHTML="Best Score: "+move;
-               localStorage.setItem({"Score":move})
+               localStorage.setItem("Score",move)
            }else{
               winner.innerHTML="Best Score: "+localStorage.getItem("Score");
            }

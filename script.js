@@ -73,6 +73,8 @@ function gameFunction(){
   // console.log(gamecontainer1);
   // console.log(gameContainer);
   // console.log(gameContainer.style);
+  let audio=new Audio("./audio/mario.mpeg");
+  audio.play();
   if(select.value==="1"){
     let COLORS=['gifs/2.gif','gifs/4.gif','gifs/7.gif','gifs/8.gif','gifs/4.gif','gifs/7.gif','gifs/8.gif','gifs/2.gif'];
     let shuffledColors=shuffle(COLORS);

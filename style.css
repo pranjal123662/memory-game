@@ -83,6 +83,12 @@ body {
   color: black;
   font-weight: 600;
 }
+#store-best-score{
+  text-align: center;
+  font-size: 1.8rem;
+  color: black;
+  font-weight: 600;
+}
 #drag {
   display: flex;
   align-items: center;

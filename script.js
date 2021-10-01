@@ -5,11 +5,16 @@ const addScore = document.getElementById("add-score");
 const score = document.getElementById("score");
 const drag = document.getElementById("drag");
 const select = document.getElementById("cars");
-
 const bestScore = document.getElementById("add-best-score");
 const winner = document.getElementById("winner");
 const gameOver = document.getElementById("game-over");
+const resetButton=document.getElementById("reset-button");
 
+let arr = [];
+let count = 0;
+let clicked = 0;
+let move = 0;
+let arrayForReset=[];
 // here is a helper function to shuffle an array
 // it returns the same array with values shuffled
 // it is based on an algorithm called Fisher Yates if you want ot research more
@@ -55,6 +60,7 @@ function createDivsForColors(colorArray) {
 }
 
 // TODO: Implement this function!
+
 function gameFunction() {
   let audio = new Audio("./audio/mario.mpeg");
   audio.play();
@@ -72,8 +78,7 @@ function gameFunction() {
     ];
     let shuffledColors = shuffle(COLORS);
     createDivsForColors(shuffledColors);
-  }
-  else if (select.value === "2") {
+  } else if (select.value === "2") {
     let COLORS = [
       "gifs/6.gif",
       "gifs/1.gif",
@@ -90,8 +95,7 @@ function gameFunction() {
     ];
     let shuffledColors = shuffle(COLORS);
     createDivsForColors(shuffledColors);
-  }
-  else {
+  } else {
     let COLORS = [
       "gifs/1.gif",
       "gifs/2.gif",
@@ -120,9 +124,9 @@ function gameFunction() {
   if (gameContainer.style.display === "") {
     gameContainer.style.display = "flex";
     Startbutton.style.display = "None";
-    // restartButton.style.display="block";
     score.style.display = "block";
     drag.style.display = "none";
+    resetButton.style.display="block";
   }
 }
 
@@ -133,13 +137,11 @@ function restart() {
     if (clicked === 8) {
       location.reload();
     }
-  }
-  else if (select.value === "2") {
+  } else if (select.value === "2") {
     if (clicked === 12) {
       location.reload();
     }
-  }
-  else{
+  } else {
     if (clicked === 20) {
       location.reload();
     }
@@ -148,45 +150,76 @@ function restart() {
 
 restartButton.addEventListener("click", restart);
 
-let arr = [];
-let count = 0;
-let clicked = 0;
-let move = 0;
+function reset(){
+  addScore.innerHTML=0;
+  for(let index=0;index<arrayForReset.length;index++){
+    arrayForReset[index].style="background-image:none";
+    arrayForReset[index].style.backgroundColor= "khaki";
+  }
+}
+
+resetButton.addEventListener('click',reset);
+
+// function confirmForReset(){
+//       let x=confirm("Are you sure want to reset")
+//       if(x){
+//         return true;
+//       }else{
+//         return false;
+//       }
+// }
+// let arr = [];
+// let count = 0;
+// let clicked = 0;
+// let move = 0;
 function handleCardClick(event) {
   if (event.target.classList[1] !== "clicked") {
-    if (count < 2) {
+    console.log(arr.length);
+    if (arr.length< 2) {
+     
       let image = event.target.classList;
-      event.target.style = `background-image : url(${image});`;
+      event.target.style = `background-image : url(${image})`;
       event.target.classList.add("clicked");
       arr.push(event.target);
+      arrayForReset.push(event.target);
       move += 1;
-      count += 1;
+      count+=1;
       addScore.innerHTML = move;
     }
-
-    if (count === 2) {
-      if (arr[0].classList[0] != arr[1].classList[0]) {
+  
+    if (count=== 2) {
+      if (arr[0].classList[0] !== arr[1].classList[0]) {
         setTimeout(() => {
-          arr[0].style = "background-image:none";
-          arr[1].style = "background-image:none";
-          arr[0].style.backgroundColor = "khaki";
-          arr[1].style.backgroundColor = "khaki";
-          arr[0].classList.remove("clicked");
-          arr[1].classList.remove("clicked");
-          count = 0;
-          arr = [];
+          if(arr.length===2){
+            arr[0].style = "background-image:none";
+            arr[1].style = "background-image:none";
+            arr[0].style.backgroundColor = "khaki";
+            arr[1].style.backgroundColor = "khaki";
+            arr[0].style="transform:rotateY(180deg);transition:300ms ease-in-out"
+            arr[1].style="transform:rotateY(180deg);transition:300ms ease-in-out"
+            arr[0].classList.remove("clicked");
+            arr[1].classList.remove("clicked");
+            arr = [];
+            count=0;
+          }
+           
+         
         }, 1 * 1000);
       } else {
+       
         arr[0].removeEventListener("click", handleCardClick);
         arr[1].removeEventListener("click", handleCardClick);
         clicked += 2;
-        count = 0;
         arr = [];
+        count=0;
       }
     }
+  
     if (select.value === "1") {
+      
       if (clicked === 8) {
         restartButton.style.display = "block";
+        resetButton.style.display="none";
         gameOver.innerText = "Game Over";
         if (!localStorage.getItem("Score")) {
           localStorage.setItem("Score", move);
@@ -202,6 +235,7 @@ function handleCardClick(event) {
     if (select.value === "2") {
       if (clicked === 12) {
         restartButton.style.display = "block";
+        resetButton.style.display="none";
         gameOver.innerText = "Game Over";
         if (!localStorage.getItem("Score")) {
           localStorage.setItem("Score", move);
@@ -217,6 +251,7 @@ function handleCardClick(event) {
     if (select.value === "3") {
       if (clicked === 20) {
         restartButton.style.display = "block";
+        resetButton.style.display="none";
         gameOver.innerText = "Game Over";
         if (!localStorage.getItem("Score")) {
           localStorage.setItem({ Score: move });
@@ -230,4 +265,5 @@ function handleCardClick(event) {
       }
     }
   }
+  
 }

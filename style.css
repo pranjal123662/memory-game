@@ -51,7 +51,22 @@ body {
   justify-content: center;
   align-content: center;
 }
+#div3{
+  display:flex;
+  justify-content: center;
+  align-content: center;
+}
 #restart-button {
+  display: none;
+  width: 10rem;
+  height: 3rem;
+  text-align: center;
+  border-radius: 13px;
+  border: none;
+  background-color: orange;
+  margin-top: 2rem;
+}
+#reset-button {
   display: none;
   width: 10rem;
   height: 3rem;
@@ -95,8 +110,8 @@ label {
   font-size: 1.8rem;
   font-weight: 600;
   text-align: center;
-  transform: scale(1);
-  transition: 300ms ease-out;
+  /* transform: scale(1);
+  transition: 300ms ease-out; */
 }
 
 @media only screen and (max-width: 500px) {

@@ -9,6 +9,13 @@ const bestScore = document.getElementById("add-best-score");
 const winner = document.getElementById("winner");
 const gameOver = document.getElementById("game-over");
 const resetButton=document.getElementById("reset-button");
+const addForBest=document.getElementById("store-best-score");
+
+ if(!localStorage.getItem('Score')){
+  addForBest.innerText = "Best Score: " + 0;
+ }else{
+  addForBest.innerText = "Best Score: " + localStorage.getItem("Score");
+ }
 
 let arr = [];
 let count = 0;
@@ -127,6 +134,8 @@ function gameFunction() {
     score.style.display = "block";
     drag.style.display = "none";
     resetButton.style.display="block";
+    addForBest.style.display="none";
+
   }
 }
 
@@ -152,6 +161,7 @@ restartButton.addEventListener("click", restart);
 
 function reset(){
   addScore.innerHTML=0;
+  move=0;
   for(let index=0;index<arrayForReset.length;index++){
     arrayForReset[index].style="background-image:none";
     arrayForReset[index].style.backgroundColor= "khaki";
@@ -186,24 +196,25 @@ function handleCardClick(event) {
       count+=1;
       addScore.innerHTML = move;
     }
-  
+  }
     if (count=== 2) {
       if (arr[0].classList[0] !== arr[1].classList[0]) {
+        document.body.style.pointerEvents="none";
         setTimeout(() => {
           if(arr.length===2){
             arr[0].style = "background-image:none";
             arr[1].style = "background-image:none";
+            arr[0].style="transform:rotateY(180deg);transition:200ms ease-in-out"
+            arr[1].style="transform:rotateY(180deg);transition:200ms ease-in-out"
             arr[0].style.backgroundColor = "khaki";
             arr[1].style.backgroundColor = "khaki";
-            arr[0].style="transform:rotateY(180deg);transition:300ms ease-in-out"
-            arr[1].style="transform:rotateY(180deg);transition:300ms ease-in-out"
+           
             arr[0].classList.remove("clicked");
             arr[1].classList.remove("clicked");
+            document.body.style.pointerEvents="auto";
             arr = [];
             count=0;
-          }
-           
-         
+          } 
         }, 1 * 1000);
       } else {
        
@@ -266,4 +277,4 @@ function handleCardClick(event) {
     }
   }
   
-}
+

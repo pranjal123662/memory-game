@@ -12,16 +12,19 @@ body {
 #game {
   display: none;
   margin: 2rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 #game div {
   border: 3px solid black;
-  /* width: 15%; */
+
   height: 200px;
   min-width: 180px;
   margin: 10px;
   display: inline-block;
   border-radius: 13px;
   background-color: khaki;
+  /* flex-wrap:wrap; */
 }
 
 #textsizing {
@@ -95,14 +98,7 @@ label {
   transform: scale(1);
   transition: 300ms ease-out;
 }
-/* #game-over{
-  width:200px;
-  height:150px;
-  display:none;
-  background-color: lightcoral;
-  justify-content: center;
-  z-index:1;
-} */
+
 @media only screen and (max-width: 500px) {
   #game {
     display: flex;
@@ -110,7 +106,6 @@ label {
     align-content: center;
     flex-wrap: wrap;
     margin: 0;
-    
   }
   #game div {
     min-width: 0;
